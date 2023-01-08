@@ -1,2 +1,2 @@
-plagiat2/basic.py plagiat1/auto.py
-files/main.py files/any_percent_bc.py
+files/autoarima.py files/binseg.py
+files/main.py files/binseg.py

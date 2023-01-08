@@ -69,7 +69,7 @@ if __name__ == '__main__':
     print(auto.summary())
 
 ''')
-print(ast.dump(tree_ast))
+print(ast.walk(tree_ast))
 print(ast.dump(tree_ast2))
 
 l1 = []
@@ -90,14 +90,15 @@ for i in ast.walk(tree_ast2):
         j += 1
     l2.append(amount)
 
-# for i in ast.iter_fields(tree_ast):
-#     print(i)
-#
+for i in ast.walk(tree_ast):
+    print(type(i))
+    # print(i.__class__().__reduce__())
+
 # for i in ast.iter_child_nodes(tree_ast):
 #     print(i)
 
-print(l1, l2, sep='\n')
-print(len(l1), len(l2))
+# print(l1, l2, sep='\n')
+# print(len(l1), len(l2))
 
 # l1_dop = l1.copy()
 #
@@ -130,6 +131,7 @@ for j in l2_dict:
         else:
             list_of_scores.append(abs((l1_dict[j] - l2_dict[j]) / l2_dict[j]))
 
-print(list_of_scores)
-print(statistics.mean(list_of_scores))
-
+# print(list_of_scores)
+# print(statistics.mean(list_of_scores))
+#
+# print(tree_ast)
